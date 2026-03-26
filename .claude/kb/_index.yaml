@@ -1,0 +1,233 @@
+schema_version: "3.0"
+project: dbx-lakeflow-psp-payment-system
+description: PSP Payment System - Databricks Lakeflow Knowledge Base
+last_updated: "2026-03-26"
+
+domains:
+  aws:
+    name: AWS Services
+    description: Lambda, SAM, and deployment patterns for serverless architecture
+    path: aws/
+    mcp_validated: "2026-03-26"
+    subdomains:
+      lambda:
+        name: AWS Lambda
+        description: SAM templates and IAM policies for Lambda functions
+        path: aws/lambda/
+        entry_points:
+          index: index.md
+          quick_reference: quick-reference.md
+        concepts:
+          - name: least-privilege
+            path: concepts/least-privilege.md
+            confidence: 0.98
+        patterns:
+          - name: s3-triggered-function
+            path: patterns/s3-triggered-function.md
+            description: Complete SAM template with S3 triggers
+        agents:
+          - aws-lambda-architect
+
+      deployment:
+        name: AWS Deployment
+        description: SAM CLI and AWS CLI deployment commands
+        path: aws/deployment/
+        entry_points:
+          index: index.md
+          quick_reference: quick-reference.md
+        concepts:
+          - name: sam-lifecycle
+            path: concepts/sam-lifecycle.md
+            confidence: 0.95
+        patterns:
+          - name: sam-deploy-commands
+            path: patterns/sam-deploy-commands.md
+            description: Full deployment workflow commands
+        agents:
+          - aws-deployer
+
+  lakeflow:
+    name: Databricks Lakeflow
+    description: Delta Live Tables pipeline development
+    path: lakeflow/
+    mcp_validated: "2026-03-26"
+    entry_points:
+      index: index.md
+      quick_reference: quick-reference.md
+    concepts:
+      - name: core-concepts
+        path: concepts/core-concepts.md
+        lines: 55
+      - name: getting-started
+        path: concepts/getting-started.md
+        lines: 129
+    patterns:
+      - name: python-decorators
+        path: patterns/python-decorators.md
+        description: DLT decorators (@dlt.table, @dlt.view)
+      - name: python-streaming
+        path: patterns/python-streaming.md
+        description: Streaming and Auto Loader patterns
+      - name: sql-tables
+        path: patterns/sql-tables.md
+        description: CREATE TABLE statements
+      - name: sql-streaming
+        path: patterns/sql-streaming.md
+        description: STREAM syntax
+      - name: cdc-apply-changes
+        path: patterns/cdc-apply-changes.md
+        description: Change Data Capture
+      - name: expectations
+        path: patterns/expectations.md
+        description: Data quality expectations
+      - name: expectations-advanced
+        path: patterns/expectations-advanced.md
+        description: Grouped expectations
+      - name: bronze-ingestion
+        path: patterns/bronze-ingestion.md
+        description: Auto Loader ingestion from cloud storage
+      - name: silver-cleansing
+        path: patterns/silver-cleansing.md
+        description: Type casting, PII masking, deduplication
+      - name: gold-aggregation
+        path: patterns/gold-aggregation.md
+        description: KPIs, aggregations, time-series
+      - name: dabs-deployment
+        path: patterns/dabs-deployment.md
+        description: Databricks Asset Bundles configuration
+    agents:
+      - lakeflow-architect
+      - lakeflow-expert
+      - lakeflow-pipeline-builder
+    reference:
+      - name: pipeline-configuration
+        path: reference/pipeline-configuration.md
+      - name: serverless-pipelines
+        path: reference/serverless-pipelines.md
+      - name: materialized-views
+        path: reference/materialized-views.md
+      - name: stateful-processing
+        path: reference/stateful-processing.md
+      - name: parameters
+        path: reference/parameters.md
+      - name: unity-catalog
+        path: reference/unity-catalog.md
+      - name: limitations
+        path: reference/limitations.md
+
+  medallion:
+    name: Medallion Architecture
+    description: Data lakehouse design patterns for Bronze/Silver/Gold layers
+    path: medallion/
+    mcp_validated: "2026-03-26"
+    entry_points:
+      index: index.md
+      quick_reference: quick-reference.md
+    concepts:
+      - name: layer-responsibilities
+        path: concepts/layer-responsibilities.md
+        confidence: 0.98
+        description: What belongs in each layer
+      - name: grain-and-granularity
+        path: concepts/grain-and-granularity.md
+        confidence: 0.95
+        description: Choosing the right grain for tables
+      - name: tables-vs-views
+        path: concepts/tables-vs-views.md
+        confidence: 0.95
+        description: When to use tables vs views
+      - name: scd-patterns
+        path: concepts/scd-patterns.md
+        confidence: 0.98
+        description: Slowly Changing Dimension patterns
+    patterns:
+      - name: bronze-ingestion
+        path: patterns/bronze-ingestion.md
+        description: Auto Loader ingestion from cloud storage
+      - name: silver-transformation
+        path: patterns/silver-transformation.md
+        description: Data cleansing and validation
+      - name: gold-aggregation
+        path: patterns/gold-aggregation.md
+        description: Business metrics and KPIs
+    agents:
+      - medallion-architect
+      - lakeflow-pipeline-builder
+
+  spark:
+    name: Apache Spark
+    description: Spark development patterns and optimization
+    path: spark/
+    mcp_validated: "2026-03-26"
+    entry_points:
+      index: index.md
+      quick_reference: quick-reference.md
+    concepts:
+      - name: architecture
+        path: concepts/architecture.md
+        confidence: 0.98
+      - name: dataframes
+        path: concepts/dataframes.md
+        confidence: 0.98
+      - name: execution-plans
+        path: concepts/execution-plans.md
+        confidence: 0.95
+      - name: memory-regions
+        path: concepts/memory-regions.md
+        confidence: 0.98
+      - name: partitions
+        path: concepts/partitions.md
+        confidence: 0.98
+      - name: shuffle
+        path: concepts/shuffle.md
+        confidence: 0.98
+    patterns:
+      - name: aqe
+        path: patterns/aqe.md
+        description: Adaptive Query Execution
+      - name: join-strategies
+        path: patterns/join-strategies.md
+        description: Join strategy selection
+      - name: broadcast-joins
+        path: patterns/broadcast-joins.md
+        description: Broadcast join optimization
+      - name: data-skew
+        path: patterns/data-skew.md
+        description: Skew detection and handling
+      - name: memory-tuning
+        path: patterns/memory-tuning.md
+        description: Memory configuration
+      - name: gc-tuning
+        path: patterns/gc-tuning.md
+        description: Garbage collection tuning
+      - name: caching
+        path: patterns/caching.md
+        description: Strategic caching
+      - name: shuffle-optimization
+        path: patterns/shuffle-optimization.md
+        description: Reducing shuffle cost
+      - name: repartition-vs-coalesce
+        path: patterns/repartition-vs-coalesce.md
+        description: Partition operations
+    reference:
+      - name: configuration-reference
+        path: reference/configuration-reference.md
+        description: Complete configuration guide
+      - name: best-practices-checklist
+        path: reference/best-practices-checklist.md
+        description: Production checklist
+      - name: troubleshooting
+        path: reference/troubleshooting.md
+        description: Error diagnosis guide
+
+file_limits:
+  quick_reference: 100
+  concepts: 150
+  patterns: 200
+  reference: unlimited
+
+confidence_thresholds:
+  critical: 0.98
+  important: 0.95
+  standard: 0.90
+  advisory: 0.80

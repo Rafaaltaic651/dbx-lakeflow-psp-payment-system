@@ -1,0 +1,23 @@
+# Credentials and secrets
+gen/key.env
+configs/azure-env.sh
+configs/databricks-env.sh
+configs/.envrc
+
+# Generated data
+data/*.jsonl
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

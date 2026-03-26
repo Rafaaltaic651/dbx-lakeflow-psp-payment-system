@@ -1,0 +1,19 @@
+[project]
+name = "psp-flowcheck"
+version = "0.1.0"
+description = "FlowCheck — End-to-End Pipeline Debugger for PSP Payment System"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "azure-storage-blob>=12.19.0",
+    "azure-identity>=1.15.0",
+    "databricks-sdk>=0.20.0",
+    "pyarrow>=14.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["cli*"]
+
+[project.scripts]
+flowcheck = "cli.app:app"
